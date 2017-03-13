@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--
+        	作者：573298496@qq.com
+        	时间：2017-03-11
+        	描述：省市联动
+        	     创建两个下拉框
+        	     在第一个下拉框里面有onchange事件
+        -->
+		<select id="s1" onchange="goTo(this.value);">
+			<option value="0">--请选择--</option>
+			<option value="北京市">北京市</option>
+			<option value="天津市">天津市</option>
+			<option value="山西省">山西省</option>
+		</select>
+		<select id="s2">
+
+		</select>
+	</body>
+	<script>
+		//创建一个二维数组存取数据
+		var arr = new Array(3);
+		arr[0] = ["北京市", "海淀区", "西城区", "朝阳区"];
+		arr[1] = ["天津市", "西青区", "北辰区", "南开区"];
+		arr[2] = ["山西省", "介休市", "太原市", "榆次市"];
+
+		function goTo(val) {
+			//获取显示市区的select
+			var s2 = document.getElementById("s2");
+			//判断里面是否有option，有就删除掉
+			var os=s2.getElementsByTagName("option");
+			for(var m=0;m<os.length;m++){
+				s2.removeChild(os[m]);
+				m--;
+			}
+			//遍历数组arr
+			for(var i = 0; i < arr.length; i++) {
+				//得到一个新的数组
+				var newarr = arr[i];
+				//得到第一个值
+				var firstvalue = newarr[0];
+				//判断传入的值与该值是否相等
+				if(firstvalue == val) {
+					//遍历新数组
+					
+					for(var j = 1; j < newarr.length; j++) {
+						
+						 var s=newarr[j];
+						 var o=document.createElement("option");
+						 var t=document.createTextNode(s);
+						 o.appendChild(t);
+						 s2.appendChild(o);
+						}
+					}
+				}
+
+			}
+			//将option标签添加到select标签
+
+		
+	</script>
+
+</html>

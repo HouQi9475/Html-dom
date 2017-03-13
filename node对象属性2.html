@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--
+        	作者：573298496@qq.com
+        	时间：2017-03-10
+        	描述：node对象属性2
+        	    * 父节点	
+        	      parentNode
+        	    * 子节点
+        	      childNodes:得到所有的子节点，但兼容性差
+        	      firstChild:第一个子节点
+        	      lastChild: 最后一个子节点
+        	    * 同辈节点
+        -->
+		<ul id="ul1">
+			<li id="li1">aaa</li>
+			<li id="li2">bbb</li>
+			<li id="li3">ccc</li>
+			<li id="li4">ddd</li>
+		</ul>
+		<script>
+			//得到li1
+			var li1=document.getElementById("li1");
+			//得到ul1(父节点)
+			var ul1=li1.parentNode;
+			alert(ul1.id);
+			//获取ul的第一个子节点
+			//得到ul
+			var a=document.getElementById("ul1");
+			var b=a.firstElementChild;  //火狐可以，ie不可以
+			//var b=a.firstChild;  //ie中可以，火狐不可以
+			alert(b.id);
+		</script>
+	</body>
+
+</html>

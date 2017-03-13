@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			要操作elements，必须获取到elements。
+			获取属性里面的值，使用 getAttribute加属性名称
+		-->
+		<input type="text" class="text" id="text" value="aaaa"/>
+		<script>
+			var text1=document.getElementById("text");
+			//alert(text1.value);
+			//alert(text1.getAttribute("value"));
+			alert(text1.getAttribute("class"));
+		</script>
+	</body>
+</html>

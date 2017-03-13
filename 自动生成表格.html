@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" id="row1" />行
+		<br />
+		<input type="text" id="col1" />列
+		<br/>
+		<input type="button" value="生成表格" onclick="add();" />
+		<div id="t1"></div>
+	</body>
+	<script>
+		function add() {
+			var row1 = document.getElementById("row1").value;
+			var col1 = document.getElementById("col1").value;
+			var t1 = document.getElementById("t1");
+			var tab = "<table border='1' style='color:#008B8B'>";
+                 for(var i=0;i<row1;i++){
+                 	tab+="<tr>";
+                 	for(var j=0;j<col1;j++){
+                 		tab+="<td>aaa</td>";
+                 	}
+                 	tab+="</tr>";
+                 }
+			tab += "</table>";
+
+			t1.innerHTML=tab;
+		}
+	</script>
+
+</html>

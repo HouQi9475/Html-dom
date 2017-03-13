@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	作者：573298496@qq.com
+        	时间：2017-03-10
+        	描述：node对象属性
+        	      *nodeType
+        	      * nodeName
+        	      * nodeValue  
+        	      使用dom解析HTML时，需要把HTML里面的标签，属性，文本都封装为对象
+        -->
+        <span id="span1">哈哈哈哈哈哈哈哈</span>
+        <script>
+            var s=document.getElementById("span1");
+        	//标签的node属性
+        	alert(s.nodeType);  //1
+        	alert(s.nodeName);  //SPAN
+        	alert(s.nodeValue); //null
+        	//属性的node属性
+        	var i=s.getAttributeNode("id");
+        	alert(i.nodeType);  //2
+        	alert(i.nodeName);  //id
+        	alert(i.nodeValue); //span1
+        	var t=s.firstChild;
+        	alert(t.nodeType);  //3
+        	alert(t.nodeName);  //#text
+        	alert(t.nodeValue); //哈哈哈哈哈哈哈哈
+        </script>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="d1">
+			<select id="s1" style="width: 150px; height: 150px;" multiple="multiple">
+				<option>保罗</option>
+				<option>韦德</option>
+				<option>安东尼</option>
+				<option>詹姆斯</option>
+				<option>欧文</option>
+			</select>
+			<br />
+			<input type="button" value="选中添加到右边" onclick="selToRight();" />
+			<br />
+			<input type="button" value="全部添加到右边" onclick="allToRight();" />
+
+		</div>
+		<div id="d2">
+			<select id="s2" style="width: 150px; height: 150px;" multiple="multiple">
+				<option>威少</option>
+			</select>
+			<br />
+			<input type="button" value="选中添加到左边" onclick="selToLeft();" />
+			<br />
+			<input type="button" value="全部添加到左边" onclick="allToLeft();" />
+		</div>
+
+		<script>
+			//选中添加到右边
+			//1,获取s1里面的option
+			//2,判断是否被选中  selected
+			//3,得到s2，添加到里面
+			function selToRight() {
+				var s1 = document.getElementById("s1");
+				var s2 = document.getElementById("s2");
+				var os = s1.getElementsByTagName("option");
+				for(var i = 0; i < os.length; i++) {
+					var o = os[i];
+					if(o.selected == true) {
+						s2.appendChild(o);
+						i--;
+					}
+				}
+			}
+			//全部添加到右边
+			function allToRight() {
+				var s1 = document.getElementById("s1");
+				var s2 = document.getElementById("s2");
+				var os = s1.getElementsByTagName("option");
+				for(var i = 0; i < os.length; i++) {
+					var o = os[i];
+					s2.appendChild(o);
+					i--;
+				}
+			}
+			//选中添加到左边
+			function selToLeft() {
+				var s2 = document.getElementById("s2");
+				var s1 = document.getElementById("s1");
+				var os = s2.getElementsByTagName("option");
+				for(var i = 0; i < os.length; i++) {
+					var o = os[i];
+					if(o.selected == true) {
+						s1.appendChild(o);
+						i--;
+					}
+				}
+			}
+			//全部添加到左边
+			function allToLeft() {
+				var s2 = document.getElementById("s2");
+				var s1 = document.getElementById("s1");
+				var os = s2.getElementsByTagName("option");
+				for(var i = 0; i < os.length; i++) {
+					var o = os[i];
+					s1.appendChild(o);
+					i--;
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#div1 {
+			width: 200px;
+			height: 150px;
+			border: 2px solid chocolate;
+		}
+	</style>
+
+	<body>
+		<!--
+        	作者：573298496@qq.com
+        	时间：2017-03-10
+        	描述：replaceChild(new node,old node)
+        	        -替换节点,通过父节点
+        -->
+		<div id="div1">
+			<ul id="ul11">
+				<li id="li11">保罗</li>
+				<li id="li12">安东尼</li>
+				<li id="li13">詹姆斯</li>
+				<li id="li14">欧文</li>
+			</ul>
+		</div>
+		<input type="button" value="替换" onclick="replace()" />
+		<script>
+			function replace() {
+				//替换<li id="li14">欧文</li>
+				//获取old(li14)标签
+				var li14=document.getElementById("li14");
+				//创建一个节点,创建标签li
+				var li=document.createElement("li");
+				//创建文本
+				var text=document.createTextNode("韦德");
+				//把文本添加到li下
+				li.appendChild(text);
+				//获取到Ul
+				var ul11=document.getElementById("ul11");
+				//添加
+				ul11.replaceChild(li,li14);
+				
+			}
+		</script>
+	</body>
+
+</html>

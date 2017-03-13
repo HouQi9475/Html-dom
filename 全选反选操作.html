@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" id="allorno" onclick="allorno();"/>全选/全不选
+		<br />
+		<input type="checkbox" name="love"/>篮球
+		<input type="checkbox" name="love"/>足球
+		<input type="checkbox" name="love"/>乒乓球
+		<input type="checkbox" name="love"/>羽毛球
+		<br/>
+		<input type="button" value="全选" onclick="selall();"/>
+		<input type="button" value="全不选" onclick="no();"/>
+		<input type="button" value="反选" onclick="other();"/>
+		
+		<script>
+		    function allorno(){
+		    	var x=document.getElementById("allorno");
+		    	if(x.checked==true){
+		    		selall();
+		    	}else{
+		    		no();
+		    	}
+		    }
+		    function selall(){
+		    	var a=document.getElementsByName("love");
+		    	for(var i=0;i<a.length;i++){
+		    		var b=a[i];
+		    		b.checked=true;
+		    	}
+		    }
+		    function no(){
+		    	var h=document.getElementsByName("love");
+		    	for(var i=0;i<h.length;i++){
+		    		var q=h[i];
+		    		q.checked=false;
+		    	}
+		    }
+		    function other(){
+		    	var a=document.getElementsByName("love");
+		    	for(var i=0;i<a.length;i++){
+		    		var b=a[i];
+		    		if(b.checked==true){
+		    			b.checked=false;
+		    		}else{
+		    			b.checked=true;
+		    		}
+		    	}
+		    }
+		</script>
+	</body>
+</html>

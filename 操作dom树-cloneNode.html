@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#div1 {
+			width: 200px;
+			height: 150px;
+			border: 2px solid chocolate;
+		}
+		
+		#div2 {
+			width: 200px;
+			height: 150px;
+			border: 2px dashed coral;
+		}
+	</style>
+
+	<body>
+		<!--
+        	作者：573298496@qq.com
+        	时间：2017-03-10
+        	描述：cloneNode(true/false)
+        -->
+		<div id="div1">
+			<ul id="ul11">
+				<li id="li11">保罗</li>
+				<li id="li12">安东尼</li>
+				<li id="li13">詹姆斯</li>
+				<li id="li14">韦德</li>
+			</ul>
+		</div>
+		<div id="div2"></div>
+		<input type="button" value="复制" onclick="clone()" />
+		<script>
+			function clone(){
+				//把div1里的内容复制到div2
+				//获取到ul
+				var ul11=document.getElementById("ul11");
+				//赋值
+				var c=ul11.cloneNode(true);
+				//获取div
+				var div=document.getElementById("div2");
+				//复制
+				div.appendChild(c);
+			}
+		</script>
+	</body>
+
+</html>
